@@ -1,6 +1,11 @@
-/* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable quotes */
-const { addBook, getAllBooks } = require("./handler");
+const {
+  addBook,
+  getAllBooks,
+  getDetailBook,
+  editBook,
+  deleteBook,
+} = require("./handler");
 
 const routes = [
   {
@@ -14,15 +19,29 @@ const routes = [
     handler: getAllBooks,
   },
   {
+    method: "GET",
+    path: "/books/{id}",
+    handler: getDetailBook,
+  },
+  {
+    method: "PUT",
+    path: "/books/{id}",
+    handler: editBook,
+  },
+  {
+    method: "DELETE",
+    path: "/books/{id}",
+    handler: deleteBook,
+  },
+  {
     method: "*",
     path: "/books",
-    handler: (req, h) =>
-      "halaman ini tidak dapat diakses dengan method tersebut",
+    handler: () => "halaman ini tidak dapat diakses dengan method tersebut",
   },
   {
     method: "*",
     path: "/{any*}",
-    handler: (req, h) => "halaman tidak ditemukan",
+    handler: () => "halaman tidak ditemukan",
   },
 ];
 

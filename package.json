@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/server.js",
-    "lint": "eslint ./",
+    "lint": "eslint ./src/",
     "start-dev": "nodemon ./src/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^21.3.2",
-    "nanoid": "^3.3.6"
+    "nanoid": "^3.3.6",
+    "nodemon": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^8.45.0",
